@@ -12,12 +12,9 @@ export class PersonasComponent {
     new Persona('Juan', 'Mamani'),
     new Persona('Maria', 'Martines'),
   ];
-  nombre: string = '';
-  apellido: string = '';
 
-  agregar() {
-    this.lista.push(new Persona(this.nombre, this.apellido));
-    this.nombre = '';
-    this.apellido = '';
+  agregar(persona:Persona){
+    console.log("Agregamos persona en el padre");
+    this.lista.push(persona);
   }
 }

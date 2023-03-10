@@ -1,31 +1,11 @@
 <div class="container form-control">
   <div class="calculadora">
     <h1>{{ titulo }}</h1>
-    <div class="row">
-      <div class="col">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="nombre"
-          [(ngModel)]="nombre"
-        />
-      </div>
-      <div class="col">
-        <input
-          type="text"
-          class="form-control"
-          placeholder="Apellido"
-          [(ngModel)]="apellido"
-        />
-      </div>
-      <div class="col">
-        <button class="btn btn-primary" (click)="agregar()">Agregar</button>
-      </div>
-    </div>
+    <app-formulario  (personaCreada)="agregar($event)"></app-formulario>
     <hr />
     <div class="row">
       <div *ngFor="let item of lista; let i = index">
-        <label>{{ i + 1 }}: {{ item.nombre }} {{ item.apellido }}</label>
+        <app-persona [index]="i+1" [persona]="item"></app-persona>
       </div>
     </div>
   </div>
