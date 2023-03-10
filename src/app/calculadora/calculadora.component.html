@@ -1,0 +1,167 @@
+<div class="container form-control">
+  <div class="calculadora">
+    <h1>{{ titulo }}</h1>
+    <div *ngIf="b == 0; else ejemplo" class="pantalla p-3 m-1">
+      {{ a }} {{ operacion }}
+    </div>
+
+    <ng-template #ejemplo class="pantalla p-3 m-1">
+      <div class="pantalla p-3 m-1">{{ a }} {{ operacion }} {{ b }}</div>
+    </ng-template>
+
+    <div class="row">
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(7)"
+        >
+          7
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(8)"
+        >
+          8
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(9)"
+        >
+          9
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-success form-control"
+          (click)="realizamosOperacion('+')"
+          [disabled]="opDesab"
+        >
+          +
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(4)"
+        >
+          4
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(5)"
+        >
+          5
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(6)"
+        >
+          6
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-success form-control"
+          (click)="realizamosOperacion('-')"
+          [disabled]="opDesab"
+        >
+          -
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(1)"
+        >
+          1
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(2)"
+        >
+          2
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(3)"
+        >
+          3
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-success form-control"
+          (click)="realizamosOperacion('*')"
+          [disabled]="opDesab"
+        >
+          *
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-danger form-control">c</button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-outline-primary form-control"
+          (click)="agregamosNumero(0)"
+        >
+          0
+        </button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-outline-primary form-control">
+          .
+        </button>
+      </div>
+      <div class="col">
+        <button
+          type="button"
+          class="btn btn-success form-control"
+          (click)="realizamosOperacion('/')"
+          [disabled]="opDesab"
+        >
+          /
+        </button>
+      </div>
+    </div>
+    <br />
+    <button
+      class="btn btn-success form-control"
+      (click)="sumar()"
+      [disabled]="sePuedeSumar()"
+    >
+      =
+    </button>
+  </div>
+</div>

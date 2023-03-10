@@ -1,0 +1,22 @@
+<h1 class="nombre">{{ titulo }}</h1>
+<div class="container">
+  <div class="row m-3">
+    <div class="col">
+      <button class="btn btn-primary form-control" (click)="calculadora()">
+        calculadora
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-success form-control" (click)="personas()">
+        personas
+      </button>
+    </div>
+    <div class="m-2">
+      <div *ngIf="selector; else nombre">
+        <app-calculadora></app-calculadora>
+      </div>
+
+      <ng-template #nombre> <app-personas></app-personas> </ng-template>
+    </div>
+  </div>
+</div>
