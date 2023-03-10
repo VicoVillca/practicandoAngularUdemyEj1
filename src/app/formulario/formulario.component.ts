@@ -12,11 +12,16 @@ export class FormularioComponent {
   nombre: string = '';
   apellido: string = '';
 
-  agregar() {
+  agregar(nombre:HTMLInputElement, apellido:HTMLInputElement) {
+    this.nombre = nombre.value;
+    this.apellido = apellido.value;
+    nombre.value='';
+    apellido.value='';
     let persona = new Persona(this.nombre, this.apellido);
     //this.lista.push(new Persona(this.nombre, this.apellido));
     this.nombre = '';
     this.apellido = '';
+
     this.personaCreada.emit(persona);
   }
 }

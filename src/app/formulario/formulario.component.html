@@ -4,7 +4,7 @@
       type="text"
       class="form-control"
       placeholder="nombre"
-      [(ngModel)]="nombre"
+#nombre
     />
   </div>
   <div class="col">
@@ -12,10 +12,10 @@
       type="text"
       class="form-control"
       placeholder="Apellido"
-      [(ngModel)]="apellido"
+      #apellido
     />
   </div>
   <div class="col">
-    <button class="btn btn-primary" (click)="agregar()">Agregar</button>
+    <button class="btn btn-primary" (click)="agregar(nombre, apellido)">Agregar</button>
   </div>
 </div>
